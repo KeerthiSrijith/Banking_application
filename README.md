@@ -1,6 +1,10 @@
 # Banking_application
 
-This is the code written in python for banking application which allows users to create account and several banking operations.
+Project Description
+
+The project is based on developing a banking application which allows users to create account and perform several banking operations. It acts as a user interface wich enables users to register themselves and login to the application in order to perform the operations. The code is written in python and mysql database is connected via mysql connector.
+
+Code description
 
 The execution of the program starts with a menu for user to select option to login or register.
 If user selects register option, the function to register user, registration_details() is invoked. In this function the user can enter personal details and account details. Once registration is complete, the user will be redirected to login page.
