@@ -3,10 +3,10 @@ import random
 
 
 
-connection = mysql.connector.connect(host='localhost',
-                                         database='banking_app',
-                                         user='root',
-                                         password='Krishna12*',auth_plugin='mysql_native_password')
+connection = mysql.connector.connect(host='Local host name',
+                                         database='database name',
+                                         user='user name',
+                                         password='password name*',auth_plugin='mysql_native_password')
 
 
 cursor=connection.cursor()
