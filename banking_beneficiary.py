@@ -1,7 +1,6 @@
 from banking_connection import *
 import banking_login
 def add_beneficiary(username):
-    #This function is to add beneficiaries 
     ben=int(input("Enter number of beneficiaries:"))
     ben_list=[input(f"Enter name of beneficiary {ben} :") for ben in range(1,ben+1)]
 
@@ -14,7 +13,7 @@ def add_beneficiary(username):
         list_beneficiary(username)
     connection1.commit()
             
-#This function shows the list of beneficiaries 
+    
 def list_beneficiary(username):
     sql='''Select * from beneficiary_details'''
     cursor1.execute(sql)
