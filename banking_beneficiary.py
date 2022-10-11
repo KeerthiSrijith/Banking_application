@@ -13,7 +13,7 @@ def add_beneficiary(username):
         list_beneficiary(username)
     connection1.commit()
             
-    
+#This function shows the list of beneficiaries 
 def list_beneficiary(username):
     sql='''Select * from beneficiary_details'''
     cursor1.execute(sql)
