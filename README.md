@@ -37,6 +37,7 @@ I have created 5 tables-
 4. card_details - Stores card detais such as cardnumber,mpin and cvv
 
 **Database and tables initialisation**
+
 create database banking_app;
 
 use banking_app;
