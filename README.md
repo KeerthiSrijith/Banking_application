@@ -4,6 +4,10 @@
 
 The project is based on developing a banking application which allows users to create account and perform several banking operations. It acts as a user interface wich enables users to register themselves and login to the application in order to perform the operations. The code is written in python and mysql database is connected via mysql connector.
 
+**Tools used**
+Python3 is used for programming. MySQL version 8.0.30 can be used for creating databases. Python mysql-connector is used for connecting python with mysql databse.
+
+
 **Code description**
 
 The execution of the program starts with a menu for user to select option to login or register.
@@ -21,5 +25,16 @@ The functions mapping the functionalities are:
 8. register_newcard() - Allows users to register new card
 
 In all the above functions, username is taken as the parameter which is taken as input from user.
+
+**Tables descrition**
+
+I have created 5 tables- 
+
+1. Registration details - Stores the username and all other information of the user
+2. Accoutdetails - Includes the account information of the user such as name, account number and account balance
+3. beneficiary_details -  Stores the beneficiary name for each username
+4. card_details - Stores card detais such as cardnumber,mpin and cvv
+
+
 
 
