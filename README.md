@@ -30,6 +30,7 @@ In all the above functions, username is taken as the parameter which is taken as
 
 I have created 5 tables- 
 
+
 1. Registration details - Stores the username and all other information of the user
 2. Accoutdetails - Includes the account information of the user such as name, account number and account balance
 3. beneficiary_details -  Stores the beneficiary name for each username
@@ -37,10 +38,15 @@ I have created 5 tables-
 
 **Database and tables initialisation**
 create database banking_app;
+
 use banking_app;
+
 create table Registration_details(username varchar(100), address varchar(100), Aadhar varchar(100), Mobile_no varchar(100));
+
 create table Account details( username varchar(100), accountnum bigint, account_balance int, creditcard_num bigint, debitcard_num bigint);
+
 create table beneficiary_details(username varchar(100), beneficiary_name varchar(100), beneficiary_id int);
+
 create table card_details(username varchar(100), accountnum bigint, creditcardnum bigint, cpin int, ccvv int, debitcardnum bigint, dpin int, dcvv int);
 
 
