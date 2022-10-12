@@ -10,3 +10,6 @@ connection1 = mysql.connector.connect(host='localhost',
 
 
 cursor1=connection1.cursor()
+
+connection2=mysql.connector.connect(host='localhost',user='usernew',database='information_schema',password='yourpassword')
+cursor2=connection2.cursor()

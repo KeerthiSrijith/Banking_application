@@ -17,15 +17,15 @@ def display_account_details(username):
             
                 
 
-            print('-'*30)
-            print("| {} | {:<30}|".format("Account number",i[1]))
-            print('-'*30)
-            print("| {} | {:<30} |".format("Account balance",i[2]))
-            print('-'*30)
-            print("| {} | {:<30} |".format("Creditcard number",i[3]))
-            print('-'*30)
-            print("| {} | {:<30} |".format("Creditcard number",i[4]))
-            print('-'*30)
+            print('-'*60)
+            print("| {:^30} | {:^30}|".format("Account number",i[1]))
+            print('-'*60)
+            print("| {:^30} | {:^30}|".format("Account balance",i[2]))
+            print('-'*60)
+            print("| {:^30} | {:^30}|".format("Creditcard number",i[3]))
+            print('-'*60)
+            print("| {:^30} | {:^30}|".format("Creditcard number",i[4]))
+            print('-'*60)
 
 
 

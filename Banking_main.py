@@ -6,7 +6,7 @@ import banking_login
 
 def enter_menu():
         global x
-        x=int(input("{} Welcome to SBI Banking {} \n Select from below options: \n 1. Login  \n 2. Registration \n Enter your choice: ".format('*'*30,'*'*30)))
+        x=int(input("\n {} Welcome to SBI Banking {} \n Select from below options: \n  \n1. Login  \n2. Registration \n \n Enter your choice: ".format('*'*30,'*'*30)))
         if x==1:
                 banking_login.login()
                 

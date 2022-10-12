@@ -1,7 +1,7 @@
 from banking_connection import *
 import banking_login
 def update_account_info(username):
-    n=int(input("Choose to update: \n 1. Username \n 2. Address \n 3. Aadhar \n 4. Mobile no."))
+    n=int(input("Choose to update: \n 1. Username \n 2. Address \n 3. Aadhar \n 4. Mobile no. \n Enter your choice for updation:"))
     if n==1:
         new=input("Enter new username:")
         u=(new,username)
@@ -24,7 +24,7 @@ def update_account_info(username):
         print("Wrong option selected!")
     print("Updation successful")
     connection1.commit()
-    revert_to_login(username)
+    banking_login.revert_to_login(username)
 
 def change_mpin(username):
         print("To change mpin")

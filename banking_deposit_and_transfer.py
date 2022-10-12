@@ -34,11 +34,11 @@ def deposit(username):
         amt=int(input("Enter amount to deposit:"))
         aaa=(amt,acc_no)
         cursor1.execute(f"Update Accountdetails set account_balance=account_balance+(%s) where accountnum=(%s)",aaa)
-        
+        connection1.commit()
         print("Money deposited in account")
         print("Back to login menu!")
         banking_login.login_menu(username)
-    connection1.commit()
+        
 
 
 def transfer_fund(username):

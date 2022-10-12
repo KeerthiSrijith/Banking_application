@@ -5,20 +5,21 @@ import banking_login
 
 def validation():
     global username
-    a=username.isalpha()
+    a=username != '' and all(chr.isalpha() or chr.isspace() for chr in username)
+    print(a)
     while not a:
         print("Invalid name entered. Please try again!")
         username=input("Enter username:")
-        a=username.isalpha()
+        a=username != '' and all(chr.isalpha() or chr.isspace() for chr in username)
 
 def registration_details():
         global username
         username=input("Enter username:")
-        a=username.isalpha()
+        a=username != '' and all(chr.isalpha() or chr.isspace() for chr in username)
         while not a:
             print("Invalid name entered. Please try again!")
             username=input("Enter username:")
-            a=username.isalpha()
+            a=username != '' and all(chr.isalpha() or chr.isspace() for chr in username)
         
         address=input("Enter address:")
         aadhar=input("Enter aadhar number:")
