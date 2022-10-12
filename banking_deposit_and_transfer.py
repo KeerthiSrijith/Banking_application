@@ -12,9 +12,8 @@ def deposit(username):
     
     acc_no=int(input("Enter your account number:"))           # Account number of user is taken as input for confirmation
 
-    sql='''select username,accountnum from Accountdetails'''
-    cursor1.execute(sql)
-    result=cursor1.fetchall()
+    result=executesql('''select username,accountnum from Accountdetails''')
+ 
     l1=[]
     
     for i in result:
@@ -51,10 +50,8 @@ def transfer_fund(username):
 
     
     acc_no=int(input("Enter Account number:"))
-
-    sql='''select username,accountnum from Accountdetails'''
-    cursor1.execute(sql)
-    result=cursor1.fetchall()
+      
+    result=executesql('''select username,accountnum from Accountdetails''')
     l1=[]
     
     for i in result:

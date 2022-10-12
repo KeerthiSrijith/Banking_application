@@ -59,9 +59,8 @@ def login():
     global username,m
     
     username=input("\n Enter username:")
-    sql='''select username from Registration_details'''
-    cursor1.execute(sql)
-    result=cursor1.fetchall()
+
+    result=executesql('''select username from Registration_details''')
     l=[]
     for i in result:
             l.append(i[0])

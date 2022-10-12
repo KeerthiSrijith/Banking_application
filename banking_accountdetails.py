@@ -7,14 +7,7 @@ import banking_login
 
 def display_account_details(username):
     """This function shows the account details of user"""
-    
-    sql = '''SELECT * from Accountdetails'''
-
-#Executing the query
-    cursor1.execute(sql)
-
-#Fetching 1st row from the table
-    result = cursor1.fetchall();
+    result = executesql('''SELECT * from Accountdetails''')
     
     print("\n")
     print("******Account Details******")

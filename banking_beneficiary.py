@@ -1,6 +1,6 @@
 '''This file contains functions to add beneficiaries and to list beneficiaries'''
 
-from pprint import pprint
+
 from banking_connection import *
 import banking_login
 import random
