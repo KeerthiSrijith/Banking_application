@@ -1,10 +1,10 @@
 # Banking_application
 
-Project Description
+**Project Description**
 
 The project is based on developing a banking application which allows users to create account and perform several banking operations. It acts as a user interface wich enables users to register themselves and login to the application in order to perform the operations. The code is written in python and mysql database is connected via mysql connector.
 
-Code description
+**Code description**
 
 The execution of the program starts with a menu for user to select option to login or register.
 If user selects register option, the function to register user, registration_details() is invoked. In this function the user can enter personal details and account details. Once registration is complete, the user will be redirected to login page.
@@ -19,3 +19,7 @@ The functions mapping the functionalities are:
 6. transfer_fund() - To transfer funds across accounts
 7. change_mpin() Allows users to change pin of existing cards
 8. register_newcard() - Allows users to register new card
+
+In all the above functions, username is taken as the parameter which is taken as input from user.
+
+
