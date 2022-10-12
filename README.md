@@ -35,6 +35,13 @@ I have created 5 tables-
 3. beneficiary_details -  Stores the beneficiary name for each username
 4. card_details - Stores card detais such as cardnumber,mpin and cvv
 
+**Database and tables initialisation**
+create database banking_app;
+use banking_app;
+create table Registration_details(username varchar(100), address varchar(100), Aadhar varchar(100), Mobile_no varchar(100));
+create table Account details( username varchar(100), accountnum bigint, account_balance int, creditcard_num bigint, debitcard_num bigint);
+create table beneficiary_details(username varchar(100), beneficiary_name varchar(100), beneficiary_id int);
+create table card_details(username varchar(100), accountnum bigint, creditcardnum bigint, cpin int, ccvv int, debitcardnum bigint, dpin int, dcvv int);
 
 
 
