@@ -1,6 +1,12 @@
+"""This file contains the method for displaying user information
+;param- username is passed. The value is taken as input while logging in"""
+
+
 from banking_connection import *
 import banking_login
+
 def display_account_details(username):
+    """This function shows the account details of user"""
     
     sql = '''SELECT * from Accountdetails'''
 

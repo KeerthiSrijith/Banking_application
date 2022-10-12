@@ -1,11 +1,16 @@
 
 from banking_connection import *
+import banking_beneficiary
 import banking_login
+"""This file contains the functions written for depositing money to user account 
+and for transferring funds 
+;param 1- username All the methods take the parameter username, which is the name of the account holder"""
 
 def deposit(username):
+    """This method takes the parameter as username and allows user to deposit money into his account"""
     
     
-    acc_no=int(input("Enter your account number:"))
+    acc_no=int(input("Enter your account number:"))           # Account number of user is taken as input for confirmation
 
     sql='''select username,accountnum from Accountdetails'''
     cursor1.execute(sql)
@@ -25,7 +30,7 @@ def deposit(username):
     for a,b in result:
             d.setdefault(a,[]).append(b)
   
-    if (acc_no not in l1) or (d[username][0]!=acc_no):
+    if (acc_no not in l1) or (d[username][0]!=acc_no):        # Account number validation
                      print("Sorry, entered account number is incorrect. Please try again!")
                      deposit(username)
                      exit
@@ -42,6 +47,7 @@ def deposit(username):
 
 
 def transfer_fund(username):
+    """This method allows the user  to transfer fund to beneficiaries."""
 
     
     acc_no=int(input("Enter Account number:"))
@@ -83,6 +89,8 @@ def transfer_fund(username):
                     banking_login.login_menu(username)
             
             else:
+                    print("Beneficiary details are: \n")
+                    banking_beneficiary.list_beneficiary(username)
                     acc_to_transfer=int(input("Enter Account number to transfer fund to"))
                     if acc_to_transfer not in l1:
                             print("Sorry, entered account number is incorrect. Please try again!")

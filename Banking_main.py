@@ -1,10 +1,11 @@
+'''This is the main file which has to be run for the execution of the project banking application'''
 import banking_registration
 import banking_login
 
 
 
-
 def enter_menu():
+        '''This method shows the options for logging in and registering'''
         global x
         x=int(input("\n {} Welcome to SBI Banking {} \n Select from below options: \n  \n1. Login  \n2. Registration \n \n Enter your choice: ".format('*'*30,'*'*30)))
         if x==1:

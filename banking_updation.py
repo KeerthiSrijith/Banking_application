@@ -1,6 +1,12 @@
+"""This file contains methods 
+to update user information, to change mpin of cards, and to register for a newcard
+;param - usename is passed as parameter across all functions"""
+
+
 from banking_connection import *
 import banking_login
 def update_account_info(username):
+    """This method allows user to update information such as username, address, aadhar and mobile number"""
     n=int(input("Choose to update: \n 1. Username \n 2. Address \n 3. Aadhar \n 4. Mobile no. \n Enter your choice for updation:"))
     if n==1:
         new=input("Enter new username:")
@@ -27,31 +33,46 @@ def update_account_info(username):
     banking_login.revert_to_login(username)
 
 def change_mpin(username):
+        """This method is called when the user intends to change the mpin of his/her card"""
         print("To change mpin")
-        acc=input("Enter Account number:")
-        mpin=input("Enter old mpin")
-        sql='''select accountnum,cpin from card_details union select accountnum,dpin from card_details '''
+        acc=input("Enter Account number :")
+        mpin=int(input("Enter old mpin : "))
+        sql="select cpin,dpin from card_details where accountnum={} ".format(acc) 
+        
         cursor1.execute(sql)
         result=cursor1.fetchall()
-        d={}
-
-        for a, b in result:
-            d.setdefault(a, []).append(b)
-        m=(d[acc])
-
-        if mpin!=m[0] and mpin!=m[1]:
-                print("wrong pin entered. Please try again!")
-                change_mpin()
-        
+        l=[]
+        for i in result:
+            l.append(i[0])
+               
+        if (mpin in l):
+            newmpin=int(input("Enter new mpin:"))
         else:
-                newmpin=int(input("Enter new mpin:"))
-                m=(newmpin,acc)
-                cursor1.execute(f"Update card_details set  cpin=(%s) where creditcardnum=(%s)",m)
-                cursor1.execute(f"Update card_details set  dpin=(%s) where debitcardnum=(%s)",m)
-                print("Pin successfully updated")
-                revert_to_login(username)
+            print("Please enter correct pin ")
+            change_mpin(username)
+
+        # for a, b in result:
+        #     d.setdefault(a, []).append(b)
+        # l=[]
+        # for i in result:
+        #     l.append(i[1])
+        
+        # if str(d[acc][0])!=mpin:
+        #         print("wrong pin entered. Please try again!")
+        #         change_mpin(username)
+        
+        # else:
+                # newmpin=int(input("Enter new mpin:"))
+        m=(newmpin,acc)
+        cursor1.execute(f"Update card_details set  cpin=(%s) where creditcardnum=(%s)",m)
+        cursor1.execute(f"Update card_details set  dpin=(%s) where debitcardnum=(%s)",m)
+        print("Pin successfully updated")
+        connection1.commit()
+        banking_login.revert_to_login(username)
+
 
 def register_newcard(username):
+        """This method is invoked for registering for a new card"""
         
         t=input("Enter type of card(credit/debit)")
         if t =='credit' or t=='CREDIT' or t=='Credit':
