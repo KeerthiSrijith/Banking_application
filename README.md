@@ -26,6 +26,14 @@ The functions mapping the functionalities are:
 
 In all the above functions, username is taken as the parameter which is taken as input from user.
 
+**Validation checks**
+There are validation checks implemented on several variables. The validity of the following variables are checked in the manner described.
+1. username - Must contain only alphabets and spaces
+2. password - Should contain 1 capital letter, 1 small letter, 1 number and 1 special character
+3. Aadhar - Should contain 12 digits (space may be included )
+4. Mobile_no - Should contain 10 digits only
+
+
 **Modules imported**
 
 I have imported the modules mysql.connector and the libraries re and random to make use of the libary functions.
