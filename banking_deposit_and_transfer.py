@@ -88,7 +88,7 @@ def transfer_fund(username):
             else:
                     print("Beneficiary details are: \n")
                     banking_beneficiary.list_beneficiary(username)
-                    acc_to_transfer=int(input("Enter Account number to transfer fund to"))
+                    acc_to_transfer=int(input("Enter Account number to transfer fund to : "))
                     if acc_to_transfer not in l1:
                             print("Sorry, entered account number is incorrect. Please try again!")
                             transfer_fund(username)
@@ -99,5 +99,5 @@ def transfer_fund(username):
                             cursor1.execute(f"Update Accountdetails set  account_balance=account_balance+(%s) where accountnum=(%s)",aaa1)
                             print("Amount successfully transfered")
                             print("Back to login menu")
-                            banking_login.login_menu(username)
-    connection1.commit()
+                            connection1.commit()
+    

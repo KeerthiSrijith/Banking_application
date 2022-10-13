@@ -56,7 +56,8 @@ def list_beneficiary(username):
     for n in count:
         if n[0]==username:
             num_ben=n[1]
-            for j in d.get(username):
+            if d.get(username)!=None:
+                for j in d.get(username):
                     print(f"Name of beneficiary : {j}\t Account number : {acc[j][0]}")
     connection1.commit()
     

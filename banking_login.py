@@ -29,6 +29,7 @@ def login_menu(username):
         banking_updation.update_account_info(username)
     elif m==6:
         banking_deposit_and_transfer.transfer_fund(username)
+        login_menu(username)
     elif m==7:
         banking_updation.change_mpin(username)
     elif m==8:
