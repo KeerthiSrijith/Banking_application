@@ -47,4 +47,4 @@ All the commands to initialise the database and tables can be found in the file 
 
 **To execute the program:**
 
-Run the single file Banking_main.py which is the main file onto which all other files are imported.
+Run the single file **Banking_main.py** which is the main file onto which all other files are imported.
