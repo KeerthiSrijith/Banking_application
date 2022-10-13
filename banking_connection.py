@@ -8,7 +8,7 @@ import random
 
 connection1 = mysql.connector.connect(host='localhost',     # This connection is made 
                                     database='banking_app', #to my mysql database banking_app
-                                     user='usernew',password='yourpassword'
+                                     user='yourusername',password='yourpassword'
                                         )    
                                          
 
