@@ -4,6 +4,7 @@
 from banking_connection import *
 import random
 import banking_login
+import re
 
 
 
@@ -13,12 +14,54 @@ def registration_details():
         and stores in the table Registration_details"""
 
         global username
-        username=input("\n Enter username:")
+        
+        username=input("\nEnter username:")
+        def check_password():
+            password=input("Enter password : ")
+            r=re.compile("^(?=.*[a-z])(?=." +
+             "*[A-Z])(?=.*\\d)" +
+             "(?=.*[-+_!@#$%^&*., ?]).+$")
+
+            if re.search(r,password) and len(password)>=7:
+                b=True
+            else:
+                b=False
+            while not b:
+                print("Password must contain 1  letter in upper case, 1 letter in lower case, a number and a special character. Please enter again!")
+                password=input("Enter password : ")
+                if re.search(r,password) and len(password)>=7:
+                    b=True
+            return password
         a=username != '' and all(chr.isalpha() or chr.isspace() for chr in username)     #Validation for username
+        
         while not a:
             print("Invalid name entered. Please try again!")
             username=input("Enter username:")
             a=username != '' and all(chr.isalpha() or chr.isspace() for chr in username)
+        
+
+
+        password=check_password()
+        def reenter_password():
+            re_password=input("Reenter password : ")
+            count=0
+            while re_password!=password and count<2:
+                print("Passwords do not match. Please enter again..")
+                re_password=input("Reenter password: ")
+                count+=1
+            if count==2:
+                print("Too many incorrect attempts. Please enter password again")
+                check_password()
+                reenter_password()
+            return re_password
+        re_password=reenter_password()
+        val=(username,password)
+        sql='''Insert into login_details values (%s,%s)'''
+        cursor1.execute(sql,val)
+        connection1.commit()
+ 
+
+        
         
         address=input("Enter address:")
         aadhar=input("Enter aadhar number:")

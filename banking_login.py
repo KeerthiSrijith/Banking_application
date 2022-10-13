@@ -15,6 +15,7 @@ def login_menu(username):
     m=int(input(" \n Select from below options: \n 1. Display account info \n 2. Add beneficiaries \n 3. Deposit money \n 4. Show list of beneficiaries \n 5. Update account info \n 6. Transfer fund \n 7. Change mpin \n 8. Register new card \n \n Please enter your choice:"))
     if m==1:
         banking_accountdetails.display_account_details(username)
+        revert_to_login(username)
     elif m==2:
         banking_beneficiary.add_beneficiary(username)
     elif m==3:
@@ -58,7 +59,7 @@ def login():
      to ensure successful login"""
     global username,m
     
-    username=input("\n Enter username:")
+    username=input("\nEnter username:")
 
     result=executesql('''select username from Registration_details''')
     l=[]
@@ -77,6 +78,17 @@ def login():
             Banking_main.enter_menu()
             exit
     else:
-            print(f"\n {'*'*30} You have successfully logged in ... {'*'*30} \n ")
+            password=input("Enter password:")
+            result=executesql('''select * from login_details''')
+            for i in result:
+                if i[0]==username:
+                    check_password=(i[1]==password)
+                    while not check_password:
+                        print("Sorry incorrect password entered. Try again..")
+                        password=input("Enter password:")
+                        check_password=(i[1]==password)
+                    print(f"\n {'*'*30} You have successfully logged in ...\U0001F604... {'*'*30} \n ")
+
+
             login_menu(username)
     connection1.commit()
