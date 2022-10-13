@@ -18,6 +18,7 @@ def login_menu(username):
         revert_to_login(username)
     elif m==2:
         banking_beneficiary.add_beneficiary(username)
+        revert_to_login(username)
     elif m==3:
         banking_deposit_and_transfer.deposit(username)
         

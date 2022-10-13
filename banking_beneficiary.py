@@ -18,12 +18,10 @@ def add_beneficiary(username):
     
     ben=int(input("Enter number of beneficiaries:"))
     ben_list=[input(f"Enter name of beneficiary {ben} :") for ben in range(1,ben+1)]
-
-    if ben==1:
-
-        insert_ben=("INSERT INTO beneficiary_details VALUES (%s, %s)")
-        ben1=ben_list[0]
-        ben_details=(username,ben1)
+    for i in range(ben):
+        insert_ben=("INSERT INTO beneficiary_details VALUES (%s, %s,%s)")
+        ben1=ben_list[i]
+        ben_details=(username,ben1,i+1)
         cursor1.execute(insert_ben,ben_details)
         list_beneficiary(username)
     connection1.commit()
@@ -32,7 +30,7 @@ def add_beneficiary(username):
 def list_beneficiary(username):
     '''This function shows the user the list of beneficiaries added to account'''
 
-    result=executesql('''Select username,beneficiary_name from ben_details''')
+    result=executesql('''Select username,beneficiary_name from beneficiary_details''')
     l=[]
     for i in result:
 
@@ -46,13 +44,13 @@ def list_beneficiary(username):
         d.setdefault(a,[]).append(b) 
     
 
-    sql='''select username,count(beneficiary_id) from ben_details group by username''' 
+     
     resultset=executesql('''select username,accountnum from Accountdetails''')
     acc={}
     for a,b in resultset:
         acc.setdefault(a,[]).append(b)
 
-
+    sql='''select username,count(beneficiary_id) from beneficiary_details group by username'''
     cursor1.execute(sql)
     count=cursor1.fetchall()
     for n in count:
