@@ -1,0 +1,17 @@
+To initialize database and tables:
+
+
+1. create database banking_app;
+
+2. use banking_app;
+
+3. create table Registration_details(username varchar(100), address varchar(100), Aadhar varchar(100), Mobile_no varchar(100));
+
+4. create table Account details( username varchar(100), accountnum bigint, account_balance int, creditcard_num bigint, debitcard_num bigint);
+
+5. create table beneficiary_details(username varchar(100), beneficiary_name varchar(100), beneficiary_id int);
+
+6. create table card_details(username varchar(100), accountnum bigint, creditcardnum bigint, cpin int, ccvv int, debitcardnum bigint, dpin int, dcvv int);
+
+7. create table login_details(username varchar(100), password varchar(100));
+
