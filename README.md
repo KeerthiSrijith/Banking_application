@@ -26,6 +26,18 @@ The functions mapping the functionalities are:
 
 In all the above functions, username is taken as the parameter which is taken as input from user.
 
+**Validation checks**
+There are validation checks implemented on several variables. The validity of the following variables are checked in the manner described.
+1. username - Must contain only alphabets and spaces
+2. password - Should contain 1 capital letter, 1 small letter, 1 number and 1 special character
+3. Aadhar - Should contain 12 digits (space may be included )
+4. Mobile_no - Should contain 10 digits only
+
+
+**Modules imported**
+
+I have imported the modules mysql.connector and the libraries re and random to make use of the libary functions.
+
 **Tables descrition**
 
 I have created 5 tables- 
@@ -39,17 +51,8 @@ I have created 5 tables-
 
 **Database and tables initialisation**
 
-create database banking_app;
+All the commands to initialise the database and tables can be found in the file sqlfiles
 
-use banking_app;
+**To execute the program:**
 
-create table Registration_details(username varchar(100), address varchar(100), Aadhar varchar(100), Mobile_no varchar(100));
-
-create table Account details( username varchar(100), accountnum bigint, account_balance int, creditcard_num bigint, debitcard_num bigint);
-
-create table beneficiary_details(username varchar(100), beneficiary_name varchar(100), beneficiary_id int);
-
-create table card_details(username varchar(100), accountnum bigint, creditcardnum bigint, cpin int, ccvv int, debitcardnum bigint, dpin int, dcvv int);
-
-create table login_details(username varchar(100), password varchar(100));
-
+Run the single file **Banking_main.py** which is the main file onto which all other files are imported.
