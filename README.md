@@ -35,6 +35,7 @@ I have created 5 tables-
 2. Accoutdetails - Includes the account information of the user such as name, account number and account balance
 3. beneficiary_details -  Stores the beneficiary name for each username
 4. card_details - Stores card detais such as cardnumber,mpin and cvv
+5. login_details - This tables stores user credentials, i.e, username and password
 
 **Database and tables initialisation**
 
@@ -50,5 +51,5 @@ create table beneficiary_details(username varchar(100), beneficiary_name varchar
 
 create table card_details(username varchar(100), accountnum bigint, creditcardnum bigint, cpin int, ccvv int, debitcardnum bigint, dpin int, dcvv int);
 
-
+create table login_details(username varchar(100), password varchar(100));
 
