@@ -6,6 +6,8 @@ import banking_login
 import random
 
 def executesql(sql):
+    '''This function is for executing select statements in sql 
+    and storing the result in variable resultset'''
     cursor1.execute(sql)
     resultset=cursor1.fetchall()
     return resultset
